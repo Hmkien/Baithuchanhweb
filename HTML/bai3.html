@@ -13,10 +13,15 @@
 </head>
 
 <body>
-    <h1><b> User Name</b> <input type="text" placeholder="input user name:"></h1>
-    <h1><b> Password</b> <input type="password" placeholder="input password:"></h1>
-    <h1> <label for="checkbox">Remember me: </label> <input type="checkbox" id="checkbox"></h1>
-    <button> LOG IN</button>
+    <form>
+        <label for="User Name"> User Name:</label>
+        <input type="text" placeholder="input Username" id="UserName"><br>
+        <label for="Password"> Password:</label>
+        <input type="password" placeholder="input Password" id="Password"><br>
+        <label for="RememberMe"> Remember Me:</label>
+        <input type="checkbox" id="RememberMe" name="RememberMe"><br>
+        <button id="login" type="button" name="login" id="login" style="border-radius: 5px; background-color: grey;">Login</button>
+    </form>
 </body>
 
 </html>
