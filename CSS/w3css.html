@@ -3,18 +3,31 @@
 <title>Hà Mạnh kiên</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    .container {
+        display: flex;
+        margin: 20px;
+    }
+</style>
 
 <body>
-    <div class="w3-container">
-        <h2>đóng 1 phần tử lisy</h2>
-        <p>nhấn vào nút "x" để đóng:</p>
-        <ul class="w3-ul w3-card-4">
-            <li class="w3-display-container">Hà Mạnh KIÊn <span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span></li>
-            <li class="w3-display-container">2121051149 <span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span></li>
-            <li class="w3-display-container">Bắc Giang <span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span></li>
-        </ul>
+    <h2>Hồ sơ cá nhân</h2>
+    <div class="container">
+        <div class="w3-card" style="display: inline-block; width:10%; margin-right: 20px;">
+            <img src="C:\Users\Admin\Downloads\tải xuống.jpg" alt="Mkien" style="width:100%;">
+            <div class="w3-container">
+                <h4><b>Hà Mạnh kiên</b></h4>
+                <p>The boss of all bosses</p>
+            </div>
+        </div>
+        <div class="w3-card-4" style="display: inline-block; width:10%;">
+            <img src="C:\Users\Admin\Downloads\hey.jpg" alt="Person" class="w3-circle" style="width:100%;">
+            <div class="w3-container">
+                <h4><b>Mkien</b></h4>
+                <p>The other boss</p>
+            </div>
+        </div>
     </div>
-
 </body>
 
 </html>
