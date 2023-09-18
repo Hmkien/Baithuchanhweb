@@ -6,38 +6,44 @@
 
 <body>
 
-    <!-- Sidebar -->
-    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-        <button onclick="w3_close()" class="w3-bar-item w3-large w3-hover-text-aqua"> &times;</button>
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
-    </div>
-
-    <!-- Page Content -->
-    <div class="w3-teal">
-        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
-        <div class="w3-container">
-            <h1>My Page</h1>
-        </div>
-    </div>
-
-    <img src="C:\Users\Admin\Downloads\bo-anh-ngo-nghinh-50-sac-thai-cua-nhung-chu-cho.jpg" alt="dog" style="width:100%">
-
     <div class="w3-container">
-        <p>This sidebar is hidden by default, (style="display:none")</p>
-        <p>You must click on the "hamburger" icon (top left) to open it.</p>
-        <p>The sidebar will hide a part of the page content.</p>
+        <h2>Tabs</h2>
+        <p>Tabs are perfect for single page web applications, or for web pages capable of displaying different subjects. Click on the links below.</p>
+    </div>
+
+    <div class="w3-bar w3-black" style="display: flex; justify-content: space-between;">
+        <button class="w3-bar-item w3-button w3-hover-red" onclick="openCity('London')">London</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
+    </div>
+
+
+    <div id="London" class="w3-container city">
+        <h2>London</h2>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="Paris" class="w3-container city" style="display:none">
+        <h2>Paris</h2>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="w3-container city" style="display:none">
+        <h2>Tokyo</h2>
+        <p>Tokyo is the capital of Japan.</p>
     </div>
 
     <script>
-        function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-        }
-
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
         }
     </script>
+
+</body>
 
 </html>
