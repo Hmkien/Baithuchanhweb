@@ -5,73 +5,39 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <body>
-    <div class="w3-container">
 
-        <h2>Navigation Bar Sizes</h2>
-        <p>Add the w3-padding-classes to change the padding of each element inside the navigation bar.</p>
-
-        <p>w3-padding-small:</p>
-        <div class="w3-bar w3-border w3-green">
-            <a href="#" class="w3-bar-item w3-button w3-padding-small">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-small">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-small">Link 2</a>
-        </div>
-
-        <p>Default:</p>
-        <div class="w3-bar w3-border w3-green">
-            <a href="#" class="w3-bar-item w3-button">Home</a>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        </div>
-
-        <p>w3-padding-large:</p>
-        <div class="w3-bar w3-border w3-green">
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-        </div>
-
-        <p>w3-padding-16:</p>
-        <div class="w3-bar w3-border w3-green">
-            <a href="#" class="w3-bar-item w3-button w3-padding-16">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-16">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-16">Link 2</a>
-        </div>
-
-        <p>w3-padding-24:</p>
-        <div class="w3-bar w3-border w3-green">
-            <a href="#" class="w3-bar-item w3-button w3-padding-24">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-24">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-24">Link 2</a>
-        </div>
-
-        <p>w3-padding-32:</p>
-        <div class="w3-bar w3-border w3-green">
-            <a href="#" class="w3-bar-item w3-button w3-padding-32">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-32">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-32">Link 2</a>
-        </div>
-
-        <p>w3-padding-small:</p>
-        <div class="w3-bar w3-border w3-orange w3-padding-small">
-            <a href="#" class="w3-bar-item w3-button">Home</a>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        </div>
-        <p>w3-padding:</p>
-        <div class="w3-bar w3-border w3-red w3-padding">
-            <a href="#" class="w3-bar-item w3-button">Home</a>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        </div>
-        <p>w3-padding-large:</p>
-        <div class="w3-bar w3-border w3-blue w3-padding-large">
-            <a href="#" class="w3-bar-item w3-button">Home</a>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        </div>
-
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large w3-hover-text-aqua"> &times;</button>
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
     </div>
-</body>
+
+    <!-- Page Content -->
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+        <div class="w3-container">
+            <h1>My Page</h1>
+        </div>
+    </div>
+
+    <img src="C:\Users\Admin\Downloads\bo-anh-ngo-nghinh-50-sac-thai-cua-nhung-chu-cho.jpg" alt="dog" style="width:100%">
+
+    <div class="w3-container">
+        <p>This sidebar is hidden by default, (style="display:none")</p>
+        <p>You must click on the "hamburger" icon (top left) to open it.</p>
+        <p>The sidebar will hide a part of the page content.</p>
+    </div>
+
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
 
 </html>
