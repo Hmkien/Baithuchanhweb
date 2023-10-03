@@ -16,15 +16,22 @@
         }
     </style>
     <script>
-        function hello() {
-            document.querySelector('H1').innerHTML = 'Hello Thầy Phạm Quang Hiển'
+        var count = 0;
+
+        function increaseCount() {
+            count++;
+            document.querySelector('#count').innerHTML = count;
+            if (count % 10 == 0) {
+                alert('Số lượt nhấp hiện tại là ' + count + '!');
+            }
         }
     </script>
 </head>
 
 <body>
+    <p id="count">a </p>
     <h1 style="animation: blink 1s linear infinite ;text-align: center;top:50%;left:50%;position: absolute;">Hà Mạnh Kiên</h1>
-    <button onclick="hello()" style="border-radius: 10px; background-color: blanchedalmond;margin-left: 20%;margin-top: 20% ;"> Nhấp vào đây để chào thầy nhé</button>
+    <button onclick="increaseCount()" style="border-radius: 10px; background-color: blanchedalmond;margin-left: 20%;margin-top: 20% ;"> Nhấp vào đây để chào thầy nhé</button>
 </body>
 
 </html>
