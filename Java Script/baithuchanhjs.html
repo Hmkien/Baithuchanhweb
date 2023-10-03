@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mạnh kiên</title>
+    <title>Mạnh Kiên</title>
     <style>
         @keyframes blink {
             0% {
@@ -16,22 +16,25 @@
         }
     </style>
     <script>
-        var count = 0;
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('button').onclick = Count;
+        });
+        let counter = 0;
 
-        function increaseCount() {
-            count++;
-            document.querySelector('#count').innerHTML = count;
-            if (count % 10 == 0) {
-                alert('Số lượt nhấp hiện tại là ' + count + '!');
+        function Count() {
+            counter++;
+            document.querySelector('#counter').innerHTML = counter;
+            if (counter % 10 == 0) {
+                alert('Số lượt nhấp hiện tại là ' + counter + '!');
             }
         }
     </script>
 </head>
 
 <body>
-    <p id="count">a </p>
-    <h1 style="animation: blink 1s linear infinite ;text-align: center;top:50%;left:50%;position: absolute;">Hà Mạnh Kiên</h1>
-    <button onclick="increaseCount()" style="border-radius: 10px; background-color: blanchedalmond;margin-left: 20%;margin-top: 20% ;"> Nhấp vào đây để chào thầy nhé</button>
+    <p id="counter">0</p>
+    <h1 style="animation: blink 1s linear infinite;text-align: center;top:50%;left:50%;position: absolute;">Hà Mạnh Kiên</h1>
+    <button style="border-radius: 10px; background-color: blanchedalmond;margin-left: 20%;margin-top: 20% ;">Nhấp vào đây để chào thầy nhé</button>
 </body>
 
 </html>
