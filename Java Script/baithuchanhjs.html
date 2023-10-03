@@ -5,13 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mạnh kiên</title>
+    <style>
+        @keyframes blink {
+            0% {
+                color: burlywood;
+            }
+            100% {
+                color: transparent;
+            }
+        }
+    </style>
     <script>
-        alert("Hello Thầy Phạm Quang Hiển")
+        function hello() {
+            alert("Hello Thầy Phạm Quang Hiển")
+        }
     </script>
 </head>
 
 <body>
-
+    <h1 style="animation: blink 1s linear infinite ;text-align: center;top:50%;left:50%;position: absolute;">Hà Mạnh Kiên</h1>
+    <button onclick="hello()" style="border-radius: 10px; background-color: blanchedalmond;margin-left: 20%;margin-top: 20% ;"> Nhấp vào đây để chào thầy nhé</button>
 </body>
 
 </html>
