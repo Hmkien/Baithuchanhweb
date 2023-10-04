@@ -6,41 +6,84 @@
 
 <body>
 
-    <div class="w3-container">
-        <h2>Mạnh Kiên</h2>
-        <div class="w3-dropdown-hover">
-            <button class="w3-button w3-black">Dropdown</button>
-            <div class="w3-dropdown-content w3-bar-block w3-card w3-light-grey" id="myDIV">
-                <input class="w3-input w3-padding" type="text" placeholder="Search.." id="myInput" onkeyup="myFunction()">
-                <a class="w3-bar-item w3-button" href="#about">About</a>
-                <a class="w3-bar-item w3-button" href="#base">Base</a>
-                <a class="w3-bar-item w3-button" href="#blog">Blog</a>
-                <a class="w3-bar-item w3-button" href="#contact">Contact</a>
-                <a class="w3-bar-item w3-button" href="#custom">Custom</a>
-                <a class="w3-bar-item w3-button" href="#support">Support</a>
-                <a class="w3-bar-item w3-button" href="#tools">Tools</a>
+    <div class="w3-row">
+        <div class="w3-half w3-light-grey w3-center" style="height:600px">
+            <div class="w3-padding-64">
+                <h2>Mạnh Kiên</h2>
+                <p>Some of my latest projects.</p>
+            </div>
+            <div class="w3-row">
+                <div class="w3-half">
+                    <img src="img_coffee.jpg" style="width:100%">
+                </div>
+                <div class="w3-half">
+                    <img src="img_workbench.jpg" style="width:100%">
+                </div>
+            </div>
+            <div class="w3-row">
+                <div class="w3-half">
+                    <img src="img_workbench.jpg" style="width:100%">
+                </div>
+                <div class="w3-half">
+                    <img src="img_coffee.jpg" style="width:100%">
+                </div>
+            </div>
+            <div class="w3-row">
+                <div class="w3-half">
+                    <img src="img_sound.jpg" style="width:100%">
+                </div>
+                <div class="w3-half">
+                    <img src="img_workbench.jpg" style="width:100%">
+                </div>
+            </div><br>
+            <p>Just call me awesome.</p>
+        </div>
+        <div class="w3-half w3-blue-grey w3-container" style="height:600px">
+            <div class="w3-padding-64 w3-center">
+                <h1>About Me</h1>
+                <img src="img_avatar3.png" class="w3-margin w3-circle" alt="Person" style="width:50%">
+                <div class="w3-left-align w3-padding-large">
+                    <p>Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <script>
-        // Filter
-        function myFunction() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            div = document.getElementById("myDIV");
-            a = div.getElementsByTagName("a");
-            for (i = 0; i < a.length; i++) {
-                txtValue = a[i].textContent || a[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+    <!-- Second Grid: Swing By & Contact -->
+    <div class="w3-row">
+        <div class="w3-half w3-dark-grey w3-container w3-center" style="height:600px">
+            <div class="w3-padding-64">
+                <h1>Swing By</h1>
+            </div>
+            <div class="w3-padding-64">
+                <p>..for a cup of coffee, or whatever.</p>
+                <p>Chicago, US</p>
+                <p>+00 1515151515</p>
+                <p>test@test.com</p>
+            </div>
+        </div>
+        <div class="w3-half w3-teal w3-container" style="height:600px">
+            <div class="w3-padding-64 w3-padding-large w3-center">
+                <h1>Contact</h1>
+                <p class="w3-opacity">GET IN TOUCH</p>
+                <form class="w3-container w3-card w3-padding-32 w3-white">
+                    <div class="w3-section">
+                        <label>Name</label>
+                        <input class="w3-input" style="width:100%;" type="text" required>
+                    </div>
+                    <div class="w3-section">
+                        <label>Name</label>
+                        <input class="w3-input" style="width:100%;" type="text" required>
+                    </div>
+                    <div class="w3-section">
+                        <label>Subject</label>
+                        <input class="w3-input" style="width:100%;" type="text" required>
+                    </div>
+                    <button type="button" class="w3-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 
