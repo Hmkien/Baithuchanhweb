@@ -1,50 +1,23 @@
 <!DOCTYPE html>
 <html>
-<title>Mạnh Kiên</title>
+<title>mạnh kiên</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <body>
-
     <div class="w3-container">
-        <h2>Hà Mạnh Kiên/h2>
+
+        <h2>Hà Mạnh Kiên</h2>
+        <div class="w3-bar">
+            <a href="#" class="w3-button w3-hover-purple">«</a>
+            <a href="#" class="w3-button w3-hover-green">1</a>
+            <a href="#" class="w3-button w3-hover-red">2</a>
+            <a href="#" class="w3-button w3-hover-blue">3</a>
+            <a href="#" class="w3-button w3-hover-black">4</a>
+            <a href="#" class="w3-button w3-hover-orange">»</a>
+        </div>
+
     </div>
-
-    <div class="w3-bar w3-black">
-        <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
-        <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
-        <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
-    </div>
-
-    <div id="London" class="w3-container w3-display-container city">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
-        <h2>London</h2>
-        <p>London is the capital city of England.</p>
-    </div>
-
-    <div id="Paris" class="w3-container w3-display-container city" style="display:none">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
-        <h2>Paris</h2>
-        <p>Paris is the capital of France.</p>
-    </div>
-
-    <div id="Tokyo" class="w3-container w3-display-container city" style="display:none">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
-        <h2>Tokyo</h2>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
-
-    <script>
-        function openCity(cityName) {
-            var i;
-            var x = document.getElementsByClassName("city");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            document.getElementById(cityName).style.display = "block";
-        }
-    </script>
-
 </body>
 
 </html>
