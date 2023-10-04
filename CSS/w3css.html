@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
+<title>Mạnh Kiên</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<body class="w3-container">
+<body>
 
-    <h2>Mạnh Kiên</h2>
-    <div class="w3-panel w3-card w3-light-grey">
-        <h4>HTML Example</h4>
-        <div class="w3-code htmlHigh notranslate">
-            &lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br> &lt;title&gt;HTML Tutorial&lt;/title&gt;<br> &lt;body&gt;
-            <br>
-            <abr>
-                &lt;h1&gt;This is a heading&lt;/h1&gt;<br> &lt;p&gt;This is a paragraph.&lt;/p&gt;<br><br> &lt;/body&gt;
-                <br> &lt;/html&gt;
+    <div class="w3-container">
+        <h2>Mạnh Kiên</h2>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button w3-black">Dropdown</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card w3-light-grey" id="myDIV">
+                <input class="w3-input w3-padding" type="text" placeholder="Search.." id="myInput" onkeyup="myFunction()">
+                <a class="w3-bar-item w3-button" href="#about">About</a>
+                <a class="w3-bar-item w3-button" href="#base">Base</a>
+                <a class="w3-bar-item w3-button" href="#blog">Blog</a>
+                <a class="w3-bar-item w3-button" href="#contact">Contact</a>
+                <a class="w3-bar-item w3-button" href="#custom">Custom</a>
+                <a class="w3-bar-item w3-button" href="#support">Support</a>
+                <a class="w3-bar-item w3-button" href="#tools">Tools</a>
+            </div>
         </div>
     </div>
 
-    <script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
-
     <script>
-        w3CodeColor();
+        // Filter
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDIV");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
     </script>
 
 </body>
