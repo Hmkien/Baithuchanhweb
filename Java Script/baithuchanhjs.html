@@ -1,40 +1,44 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mạnh Kiên</title>
+    <meta name="viewport" content="width=<inoy>, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        @keyframes blink {
-            0% {
-                color: burlywood;
-            }
-            100% {
-                color: transparent;
-            }
+        html {
+            background-color: bisque;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('button').onclick = Count;
-        });
-        let counter = 0;
-
-        function Count() {
-            counter++;
-            document.querySelector('#counter').innerHTML = counter;
-            if (counter % 10 == 0) {
-                alert('Số lượt nhấp hiện tại là ' + counter + '!');
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <p id="counter">0</p>
-    <h1 style="animation: blink 1s linear infinite;text-align: center;top:50%;left:50%;position: absolute;">Hà Mạnh Kiên</h1>
-    <button style="border-radius: 10px; background-color: blanchedalmond;margin-left: 20%;margin-top: 20% ;">Nhấp vào đây để chào thầy nhé</button>
+    <form>
+        <div style="margin:0 auto;background-color: aquamarine;width:300px;height:150px;justify-content: center;border-radius: 10px;margin-top: 250px;">
+            <div style="margin-bottom: 20px;padding-top: 10px;text-align: center;">
+                <label style="padding-top:20px ;">Nhập số a:</label>
+                <input type="text" name="số a" id="a" required/><br>
+            </div>
+            <div style="margin-bottom: 20px;padding-top: 10px;text-align: center;">
+                <label>Nhập số b:</label>
+                <input type="text" name="số b" id="b" required/><br>
+            </div>
+
+            <button type="submit" style=" background-color: aqua;margin-top: 20px;margin-left: 100px; " onclick="total()"> Tổng</button>
+        </div>
+    </form>
+
+
+
 </body>
+<script>
+    function total() {
+        const a = parseInt(document.querySelector('#a').value);
+        const b = parseInt(document.querySelector('#b').value);
+        var tong = a + b;
+        alert('Tổng hai số đã  nhập là:' + tong + ' ')
+    }
+</script>
+
 
 </html>
