@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<inoy>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         html {
@@ -14,31 +14,29 @@
 
 <body>
     <form>
-        <div style="margin:0 auto;background-color: aquamarine;width:300px;height:150px;justify-content: center;border-radius: 10px;margin-top: 250px;">
-            <div style="margin-bottom: 20px;padding-top: 10px;text-align: center;">
+        <div style="margin:0 auto;background-color: aquamarine;width:330px;height:230px;justify-content: center;border-radius: 10px;margin-top: 250px;">
+            <div style="margin-bottom: 20px;padding-top: 30px;text-align: center;">
                 <label style="padding-top:20px ;">Nhập số a:</label>
-                <input type="text" name="số a" id="a" required/><br>
+                <input type="text" name="soa" id="a" required/><br>
             </div>
             <div style="margin-bottom: 20px;padding-top: 10px;text-align: center;">
                 <label>Nhập số b:</label>
-                <input type="text" name="số b" id="b" required/><br>
+                <input type="text" name="sob" id="b" required/><br>
             </div>
+            <p style="margin-left: 40px;">Kết quả là: <span></span></p>
 
-            <button type="submit" style=" background-color: aqua;margin-top: 15px;margin-left: 100px;border: none;width: 80px;height: 30px; " onclick="total()"> Tổng</button>
+            <button type="button" style="background-color: aqua;margin-top: px;margin-left: 100px;border: none;width: 80px;height: 30px; " onclick="total()">Tổng</button>
         </div>
     </form>
 
-
-
+    <script>
+        function total() {
+            const a = parseInt(document.querySelector('#a').value);
+            const b = parseInt(document.querySelector('#b').value);
+            const tong = a + b;
+            document.querySelector('span').textContent = +tong;
+        }
+    </script>
 </body>
-<script>
-    function total() {
-        const a = parseInt(document.querySelector('#a').value);
-        const b = parseInt(document.querySelector('#b').value);
-        var tong = a + b;
-        alert('Tổng hai số đã  nhập là:' + tong + ' ')
-    }
-</script>
-
 
 </html>
