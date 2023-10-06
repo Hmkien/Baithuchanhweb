@@ -92,7 +92,8 @@
         confirmPassword.addEventListener('input', confirmpw)
 
         function check() {
-            var password = document.getElementById('pw');
+            var password = document.getElementById('pw').value;
+            var repassword = document.getElementById('rpw').value;
             var hoten = document.getElementById('hoten').value;
             var username = document.getElementById('username').value;
             var emeo = document.getElementById('email').value;
@@ -101,6 +102,9 @@
 
             if (password.value === '' || hoten === '' || username === '' || emeo === '' || sdt === '' || traloi === '') {
                 alert('Bạn chưa nhập đủ thông tin. Vui lòng kiểm tra lại trường đang thiếu.');
+            }
+            if (password != repassword) {
+                alert('Bạn nhập mật khẩu không khớp')
             } else {
                 alert('Xin chào bạn ' + hoten + '!');
             }
