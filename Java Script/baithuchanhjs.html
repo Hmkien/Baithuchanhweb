@@ -4,22 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hà Mạnh Kiên</title>
 </head>
 
 <body>
-    <h1 id="color" style="color: blue;"> Hello Mạnh Kiên</h1>
-    <button class="change-color" data-color="red">Red</button>
-    <button class="change-color" data-color="green">green</button>
-    <button class="change-color" data-color="yellow">Yellow</button>
+    <h1> Tasks</h1>
+    <ul id="tasks">
+        <li> đá bóng</li>
+    </ul>
+    <form id="new-task">
+        <input type="text" id="task" autofocus placeholder="New Task">
+        <input type="submit">
+    </form>
+
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll('.change-color').forEach(function(button) {
-            button.onclick = function() {
-                document.querySelector('#color').style.color = button.dataset.color;
-            };
-        });
+        document.querySelector('#new-task').onsubmit = function() {
+            const li = document.createElement('li');
+            li.innerHTML = document.querySelector('#task').value;
+            document.querySelector('#tasks').append(li);
+            document.querySelector('#tasks').value = '';
+            return false;
+        };
+
     });
 </script>
 
