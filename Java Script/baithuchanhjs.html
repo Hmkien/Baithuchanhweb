@@ -9,22 +9,18 @@
 
 <body>
     <h1 id="color" style="color: blue;"> Hello Mạnh Kiên</h1>
-    <button onclick="yellow()">Yellow</button>
-    <button onclick="red()">Red</button>
-    <button onclick="green()">Green</button>
+    <button class="change-color" data-color="red">Red</button>
+    <button class="change-color" data-color="green">green</button>
+    <button class="change-color" data-color="yellow">Yellow</button>
 </body>
 <script>
-    function yellow() {
-        document.getElementById("color").style.color = "yellow";
-    }
-
-    function red() {
-        document.getElementById("color").style.color = "red";
-    }
-
-    function green() {
-        document.getElementById("color").style.color = "green";
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.change-color').forEach(function(button) {
+            button.onclick = function() {
+                document.querySelector('#color').style.color = button.dataset.color;
+            };
+        });
+    });
 </script>
 
 </html>
