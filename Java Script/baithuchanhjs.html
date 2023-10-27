@@ -22,7 +22,10 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#submiting').disabled = true;
         document.querySelector('#new-content').onkeyup = function() {
-            document.querySelector('#submiting').disabled = false;
+            if (document.querySelector('#new-content').value.length < 8) {
+                document.querySelector("#sumiting").disabled = true;
+            } else
+                document.querySelector('#submiting').disabled = false;
         }
         document.querySelector('#infor').onsubmit = function() {
             const li = document.createElement('li');
