@@ -1,112 +1,158 @@
+<!-- em sẽ xây dựng chức năng ở phần đăng nhập khi người dùng nhập đủ tài khoản mật khẩu thì có thể đăng nhập: -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phương trình bậc 2</title>
-    <style>
-        .container {
-            display: inline;
-            width: 40em;
-            height: auto;
-            border: 1px solid black;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            min-height: 25em;
-            background-color: bisque;
-            border-radius: 15px;
-        }
-        
-        .container input[type="number"] {
-            width: 4em;
-            height: 2em;
-            margin-left: 1em;
-        }
-        
-        label {
-            margin-left: 2em;
-        }
-        
-        .container h1 {
-            text-align: center;
-        }
-        
-        .container button {
-            margin: 2em 0 0 40%;
-            width: 7em;
-            height: 3em;
-            background-color: red;
-            border-radius: 1em;
-            display: none;
-        }
-        
-        .container p {
-            color: red;
-            display: none;
-        }
-        
-        @media screen and (max-width: 558px) {
-            .container {
-                width: 20em;
-            }
-            .container input[type="number"] {
-                width: 3em;
-                height: 2em;
-                margin-left: 1em;
-                display: flex;
-            }
-        }
-    </style>
+    <title>Document</title>
 </head>
 
+<style>
+    html {
+        height: 100%;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #e4e3c8;
+    }
+    
+    .login-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: lightgoldenrodyellow;
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        border-radius: 10px;
+    }
+    
+    .login-box h1 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: black;
+        text-align: center;
+    }
+    
+    .login-box .user-box {
+        position: relative;
+    }
+    
+    .login-box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: black;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+        background: transparent;
+    }
+    
+    .login-box .user-box label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: black;
+        pointer-events: none;
+        transition: .5s;
+    }
+    
+    .login-box .user-box input:focus~label,
+    .login-box .user-box input:valid~label {
+        top: 32px;
+        left: 0;
+        color: #ffc300;
+        font-size: 15px;
+    }
+    
+    .login-box form a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #ffc300;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px;
+    }
+    
+    .login-box a:hover {
+        background: #ffc300;
+        color: black;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ffc300, 0 0 25px #ffc300, 0 0 50px #ffc300, 0 0 100px #ffc300;
+    }
+    
+    .content a:hover {
+        background: #ffc300;
+        color: black;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ffc300, 0 0 25px #ffc300, 0 0 50px #ffc300, 0 0 100px #ffc300;
+    }
+    
+    .content {
+        display: flex;
+    }
+    
+    .content a {
+        text-align: center;
+    }
+    
+    .back-button {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+</style>
+
 <body>
-    <div class="container">
-        <h1> Tính phương trình bậc 2</h1>
-        <form id="info">
-            <label for="a"> Nhập vào số a</label>
-            <input id="a" type="number" name="a">
-            <label for="b">Nhập vào số b</label>
-            <input id="b" type="number" name="b">
-            <label for="c">Nhập vào số c</label>
-            <input id="c" type="number" name="c">
-        </form>
-        <br>
-        <button type="button" id="button"> Tính toán</button>
-        <p style="color: red;">phương trình trên:<span></span></p>
+    <div class="back-button">
+        <a href="javascript:history.go(-1)" style="text-decoration: none;padding-right:90%;color:black;">Back</a>
     </div>
+
+    <div class="login-box">
+        <h1> Đăng Nhập</h1>
+        <form action="">
+            <div class="user-box">
+                <input type="text" id="username" name="" required="">
+                <label>Tên Đăng Nhập</label>
+            </div>
+            <div class="user-box">
+                <input type="password" id="password" name="" required="">
+                <label>Mật Khẩu</label>
+            </div>
+            <input id="submit" type="submit" style=" width: 10em;text-align:center;height: 4em; margin-left: 80px;background-color:#c4c125;color:black" value="ĐĂNG NHẬP">
+
+            <div class="content">
+                <a href="#" style="font-size:12px;">Quên Mật Khẩu</a>
+                <a href="#" style="font-size:12px;">Tạo Tài Khoản</a>
+            </div>
+
+        </form>
+    </div>
+
 </body>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById('a').onkeyup = function() {
-            document.getElementById('button').style.display = 'block';
-        }
-        document.querySelector('#button').onclick = function() {
-            if (document.querySelector('#a').value === '') {
-                alert('Vui lòng nhập số a');
-            } else {
-                var a = parseFloat(document.querySelector('#a').value);
-                var b = parseFloat(document.querySelector('#b').value);
-                var c = parseFloat(document.querySelector('#c').value);
-                const delta = b * b - 4 * a * c;
-                var x1, x2;
-                if (delta > 0) {
-                    x1 = (-b + Math.sqrt(delta)) / (2 * a);
-                    x2 = (-b - Math.sqrt(delta)) / (2 * a);
-                    document.querySelector('span').textContent = ' có hai nghiệm phân biệt: ' + x1 + ', ' + x2 + ' và delta = ' + delta;
-                    document.querySelector('p').style.display = 'block';
-                    document.getElementById('button').style.display = 'none';
-                } else if (delta === 0) {
-                    x1 = x2 = -b / (2 * a);
-                    document.querySelector('span').textContent = ' có hai nghiệm kép x1=x2: ' + x1 + ' và delta = ' + delta;
-                    document.querySelector('p').style.display = 'block';
-                    document.getElementById('button').style.display = 'none';
-                } else {
-                    document.querySelector('span').textContent = 'Phương trình vô nghiệm';
-                }
-                document.querySelector('p').style.display = 'none';
-            }
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+                document.getElementById('submit').style.display = 'none';
+            }, 5000
+
+        )
+        document.getElementById("username" && "password").onkeyup = function() {
+            document.getElementById('submit').style.display = 'block';
         }
     });
 </script>
