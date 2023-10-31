@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hà Mạnh Kiên</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+
+    </style>
     <script>
         $(document).ready(function() {
-            $('#hide').click(function() {
-                $('p').toggle();
+            $('button').click(function() {
+                $('#divex1').fadeIn();
+                $('#divex2').fadeOut();
+                $('#divex3').fadeTo();
+                $('#divex4').fadeToggle();
             });
         });
     </script>
@@ -17,8 +23,27 @@
 
 <body>
     <h1>Nhấn vào nút để hiển thị thông tin</h1>
-    <p> Hà Mạnh Kiên</p>
-    <button id="hide">click me</button>
+    <button>Hà Mạnh Kiên</button>
+    <div id="divex1" style="background-color: red; width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    display: none;"></div>
+    <div id="divex" style="background-color: yellow; width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    display: none;"></div>
+    <div id="divex2" style="background-color:blue; width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+   "></div>
+    <div id="divex3" style="background-color:pink; width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    display: none;"></div>
+    <div id="divex4" style="background-color: green; width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    display: none;"> </div>
 
 </body>
 
