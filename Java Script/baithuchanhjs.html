@@ -4,22 +4,33 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        function afterText() {
-            var txt1 = "<b>I </b>"; // Create element with HTML
-            var txt2 = $("<i></i>").text("love "); // Create with jQuery
-            var txt3 = document.createElement("b"); // Create with DOM
-            txt3.innerHTML = "jQuery!";
-            $("h1").after(txt1, txt2, txt3); // Insert new elements after img
-        }
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("p").remove(".test, .demo");
+            });
+        });
     </script>
+    <style>
+        .test {
+            color: red;
+            font-size: 20px;
+        }
+        
+        .demo {
+            color: green;
+            font-size: 25px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1> Hà Manh Kiên -2121051149</h1>
-    <p>Click the button to insert text after the h1.</p>
+    <p>This is a paragraph.</p>
+    <p class="test">Hà Mạnh kiên-2121051149".</p>
+    <p class="test">Hà Mạnh kiên-2121051149".</p>
+    <p class="demo">This is p element with class="demo".</p>
 
-    <button onclick="afterText()">Insert after</button>
+    <button>Remove all p elements with class="test" and class="demo"</button>
 
 </body>
 
