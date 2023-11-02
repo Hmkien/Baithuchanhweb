@@ -4,29 +4,22 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#btn1").click(function() {
-                $("#test1").text(function(old, neW) {
-                    return "Old text: " + neW + " New text: Hello world! (index: " + old + ")";
-                });
-            });
-
-            $("#btn2").click(function() {
-                $("#test2").html(function(i, origText) {
-                    return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
-                });
-            });
-        });
+        function afterText() {
+            var txt1 = "<b>I </b>"; // Create element with HTML
+            var txt2 = $("<i></i>").text("love "); // Create with jQuery
+            var txt3 = document.createElement("b"); // Create with DOM
+            txt3.innerHTML = "jQuery!";
+            $("h1").after(txt1, txt2, txt3); // Insert new elements after img
+        }
     </script>
 </head>
 
 <body>
 
-    <p id="test1">This is a <b>bold</b> paragraph.</p>
-    <p id="test2">Hà Mạnh <b>Kiên</b>2121051149</p>
+    <h1> Hà Manh Kiên -2121051149</h1>
+    <p>Click the button to insert text after the h1.</p>
 
-    <button id="btn1">Show Old/New Text</button>
-    <button id="btn2">Show Old/New HTML</button>
+    <button onclick="afterText()">Insert after</button>
 
 </body>
 
