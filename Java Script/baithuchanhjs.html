@@ -1,37 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             $("button").click(function() {
-                $("p").remove(".test, .demo");
+                $("h1, h2, p").toggleClass("blue");
+                $("div").toggleClass("important");
             });
         });
     </script>
     <style>
-        .test {
-            color: red;
-            font-size: 20px;
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
         }
         
-        .demo {
-            color: green;
-            font-size: 25px;
+        .blue {
+            color: blue;
         }
     </style>
 </head>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
 
-<body>
+<p>Hà Mạnh Kiên-2121051149</p>
+<p>Hà Mạnh Kiên-2121051149.</p>
 
-    <p>This is a paragraph.</p>
-    <p class="test">Hà Mạnh kiên-2121051149".</p>
-    <p class="test">Hà Mạnh kiên-2121051149".</p>
-    <p class="demo">This is p element with class="demo".</p>
+<div>This is some important text!</div><br>
 
-    <button>Remove all p elements with class="test" and class="demo"</button>
-
+<button>Add classes to elements</button>
 </body>
 
 </html>
