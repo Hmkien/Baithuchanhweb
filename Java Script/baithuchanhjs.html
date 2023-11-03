@@ -6,12 +6,12 @@
     <script>
         $(document).ready(function() {
             $("button").click(function() {
-                $("p").css({
-                    "background-color": "blue",
-                    "font-size": "200%",
-                    "color": "red",
-                    "font-family": "Arial"
-                });
+                var txt = "";
+                txt += "Document width/height: " + $(document).width();
+                txt += "x" + $(document).height() + "\n";
+                txt += "Window width/height: " + $(window).width();
+                txt += "x" + $(window).height();
+                alert(txt);
             });
         });
     </script>
@@ -19,15 +19,7 @@
 
 <body>
 
-    <h2>This is a heading</h2>
-
-    <p style="background-color:#ff0000">Hà Mạnh Kiên-2121051149</p>
-    <p style="background-color:#00ff00">Hà Mạnh Kiên-2121051149</p>
-    <p style="background-color:#0000ff">Hà Mạnh Kiên-2121051149</p>
-
-    <p>Hà Mạnh Kiên-2121051149</p>
-
-    <button>sửa phông</button>
+    <button>Display dimensions of document and window</button>
 
 </body>
 
