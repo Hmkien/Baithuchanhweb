@@ -1,7 +1,10 @@
 <?php
-$TK=1000.000;
-$Pay=500.000;
-echo"số tiền ban đầu có là: $TK <br>";
-echo"số tiền cần chuyền khoản: $Pay <br>";
-$lastTK=$TK + $Pay;
-echo"số tiền sau khi chuyển khoản là: $lastTK";
+$subject = " lập trình web";
+$name = "HUMG";
+$number1= 2;
+$number2=2;
+echo"Học " . $subject ."ở phòng 502 tại trường" . $name . "<br>";
+echo"Học $subject ở phòng 502 tại trường  $name <br>";
+echo"<h1>$name </h1>";
+echo $number1 + $number2;
+?>
