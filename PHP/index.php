@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
- Welcome to <?php echo $_GET["username"] ;?><br>
- your password <?php echo $_GET["password"] ;?> 
-</body>
-</html>
+<?php 
+$soA=8;
+$soB=10;
+if($soA<$soB)
+echo$soA . "<" .$soB;
+elseif($soA> $soB)
+echo $soA . ">" .$soB;
+else
+echo $soA . "=" .$soB;
+?>
