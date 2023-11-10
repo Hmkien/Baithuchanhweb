@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        .login {
+            margin: 0 auto;
+            border: 1px solid black;
+            width: max-content;
+            height: max-content;
+            margin-top: 20%;
+            border-radius: 2em;
+            background-color: antiquewhite;
+        }
+        
+        .login label {
+            font-size: 28px;
+        }
+        
+        .login input[type="text"] {
+            margin-top: 2em;
+            width: 20em;
+            height: 3em;
+        }
+        
+        .login input[type="submit"] {
+            margin-left: 20%;
+            margin-bottom: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="./PHP/index.php" method="get">
+        <div class="login">
+            <label for="username">số thứ nhất</label>
+            <input type="text" name="username"><br>
+            <label for="password">số thứ 2</label>
+            <input type="text" name="password" style="  margin-top: 2em;
+            width: 20em;
+            height: 3em;"><br>
+            <br><br>
+            <input type="submit" value="tổng" style="  margin-top: 2em;
+            width: 20em;
+            height: 3em;">
+            <br>
+        </div>
+
+    </form>
+</body>
+
+</html>
