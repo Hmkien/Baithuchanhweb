@@ -3,43 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>slide 21</title>
 </head>
 <body>
-<form action="index.php" method="post">
-    <h1> Hoán đổi tiền tệ</h1>
-    <label for="first">nhập vào số tiền cần đổi</label><br>
-    <input type="text" name="firt" required>
-    <label>Loại tiền:</label><br>
-    <select name="name">
-        <option value="USD">USD</option>
-        <option value="AUD">AUD</option>
-        <option value="JPY">JPY</option>
-        <option value="EUR">EUR</option>
-    </select>
-    <input type="submit" value="Chuyển đổi">
-</form>
-<?php 
-if(isset($_POST["firt"]) &&isset($_POST["name"])){
-    $tien=(float)$_POST["firt"] ;
-    $ten=$_POST["name"] ;
-    if($_POST["name"]== "USD"){
-        $kq=23000*$tien;
-        echo"Kết quả=$kq";
+    <form action="index.php" method="post">
+        <label for="Toan">Điểm Toán</label><br>
+        <input type="text" name="Toan">
+        <label for="Ly">Điểm Lý</label><br>
+        <input type="text" name="Ly">
+        <label for="Hoa">Điểm Hóa</label><br>
+        <input type="text" name="Hoa"><br>
+        <input type="submit" value="Kết quả">
+    </form>
+    <?php 
+    if(isset($_POST["Toan"]) && isset($_POST["Ly"]) && isset($_POST["Hoa"])){
+        $toan=$_POST["Toan"];
+        $ly=$_POST["Ly"];
+        $hoa = $_POST["Hoa"];
+        $tong= $toan+ $ly + $hoa;
+        if($tong>=22){
+            echo"Bạn đã đỗ  CNTT chất lượng cao với kết quả =$tong";
         }
-    elseif($_POST["name"]== "AUD"){
-        $kq= 17000*$tien;
-        echo "Kết quả=$kq";
+        elseif(($tong<22)&&($tong>=18)){
+            echo "Bạn đã dỗ CNTT và KHDL với kết quả =$tong";
     }
-    elseif($_POST["name"]== "JPY"){
-        $kq=200*$tien;
-        echo "Kết quả=$kq";
+    elseif((18>$tong)&&($tong>=17)){
+        echo "Bạn đã dỗ địa chất với kết quả =$tong";
+}
+elseif((17>$tong)&&($tong>=15)){
+    echo "Bạn đã đỗ ngành Môi trường với kết quả =$tong";
+}
+else{
+    echo"Bạn trượt rồi hahahaha với kết quả =$tong";
+}
     }
-    else{
-        $kq= 27000*$tien;
-        echo"Kết quả=$kq";
-    }
-    }
-?>
+    ?>
 </body>
 </html>
