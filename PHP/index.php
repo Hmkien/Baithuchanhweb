@@ -6,19 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    $T= true;
-    $F= false;
-    echo"T= $T <br>";
-    echo"F= $F <br>";
-    $check1= 9>3;
-    $check2 = 10<4;
-    $check3 = $check1 || $check2;
-    $check4= $check1 && $check2;
-    echo " Check1 =$check1 <br>";
-    echo " Check2 =$check2 <br>";
-    echo " Check3 =$check3 <br>";
-    echo " Check4 =$check4 ";
-    ?>
+ <form action="index.php" method="post">
+    <h1>Quite The Game</h1>
+    <select name ="traloi">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <input type="submit" value="submit">
+ </form>
+ <?php 
+ if(isset($_POST["traloi"])) {
+ echo" THe Game";
+ if($_POST['traloi']=='Yes') {
+    echo" Thoát Game";
+ }
+ else
+ {
+    echo "Game sẽ tiếp tục sau 3s <br>";
+ }
+ echo"game dang tiếp tục";
+}
+ ?>
 </body>
 </html>
