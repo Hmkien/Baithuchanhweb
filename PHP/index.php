@@ -7,11 +7,39 @@
 </head>
 <body>
 <?php
-$i=1;
-while($i<=10){
-    echo"dãy số là $i<br>";
-    $i++;
-}
+    echo "<form method='post' action='index.php'>";
+    $today = getdate();
+    $curyear = $today["year"];
+    echo "Ngày <select name='ngay'>";
+
+    for($i=1; $i<=31; $i++){
+       echo " <option value='$i'>$i</option> ";
+    }
+    
+    echo "</select> Tháng <select name='thang'>";
+
+    for($i=1; $i<=12; $i++){
+       echo " <option value='$i'>$i</option> ";
+    }
+   
+    echo "</select> Năm <select name='nam'>";
+
+    for($i=1990; $i<=$curyear; $i++){
+       echo " <option value='$i'>$i</option> ";
+    }
+   
+    echo "</select>";
+    echo "    <input type='submit' value='Xác Nhận'>";
+    echo "</form>";
+    
+    if(isset($_POST["ngay"]) && isset($_POST["thang"]) && isset($_POST["nam"])){
+        $ngay = $_POST["ngay"];
+        $thang = $_POST["thang"];
+        $nam = $_POST["nam"];
+        echo "Bạn đã chọn ngày " . $ngay . " Tháng " . $thang . " năm " . $nam . " làm ngày cưới";
+    }
 ?>
+
+
 </body>
 </html>
