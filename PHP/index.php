@@ -7,69 +7,25 @@
 </head>
 <body>
     
+<h1>Hoán đối tiền tệ</h1>
 <form method="post" action="index.php">
-    <label>Nhập vào tên bạn</label><br>
-    <input type="text" name="name" required><br>
-    <label> Toán:</label><br>
-    <input type="text" name="toan"  required><br>
-    <label>Lý:</label><br>
-    <input type="text" name="ly"  required><br>
-    <label> Hóa:</label><br>
-    <input type="text" name="hoa"  required><br>
-    <label> Tiếng anh:</label><br>
-    <input type="text" name="anh"  required><br>
-    <label> Văn:</label><br>
-    <input type="text" name="van"  required><br>
-    <label> Sử:</label><br>
-    <input type="text" name="su"  required><br>
-    <input type="submit" value="Kết Quả">
+<label>Nhập vào số muốn hoán đối</label><br>
+<input type="text" name="inputt" required><br>
+<select name="type-money">
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="JPY">JPY</option>
+    <option value="SGP">SGP</option>
+</select>
+<br>
+<input type="submit" value="Chuyển đổi">
 </form>
-<?php 
-function ketQua($name,$list){
-    $temp=true;
-    foreach ($list as $diem){
-        if($diem<4){
-            $temp=false;
-        echo"Chàp bạn ".$name."bạn đã đúp vì có điểm".$diem."<4";
-        break;
-        }
-        elseif($diem>10){
-            echo"bạn".$name."đã nhập điểm 1 môn quá điểm tối đa".$diem;
-            $temp=false;
-            break;
-        }
-    }
-    if($temp){
-            $trungBinh=array_sum($list)/count($list);
-            if($trungBinh<5){
-            echo"chào bạn".$name."đã là đạt học sinh yếu và có điểm trung bình là".$diem;
-      
-            }
-            elseif ($trungBinh>=5 && $trungBinh< 6.5){
-            echo "chào bạn".$name."đã dạt học sinh trung bình vì có diểm trung bình là:".$diem;
-           
-            }
-            elseif($trungBinh>= 6.5&& $trungBinh< 8){
-                echo "chào bạn".$name."đã dạt học sinh giỏi với điêm trung bình:".$diem;
-        }
-        else{
-            echo"chào bạn ".$name."đã dạt học sinh giỏi với điểm trung bình:".$diem;
-        }
-    }
-    }
-
-?>
-<?php 
-if(isset($_POST["name"])&&isset($_POST["toan"])&&isset($_POST["ly"])&&isset($_POST["hoa"])&&isset($_POST["anh"])&&isset($_POST["van"])&&isset($_POST["su"])){
-    $diem=array();
-    $name=$_POST["name"];
-    $diem[]=(float)$_POST["toan"];
-    $diem[]=(float)$_POST["ly"];
-    $diem[]=(float)$_POST["hoa"];
-    $diem[]=(float)$_POST["anh"];
-    $diem[]=(float)$_POST["van"];
-    $diem[]=(float)$_POST["su"];
-    ketQua($name,$diem);
+<?php
+if(isset($_POST['inputt']) && isset($_POST['type-money'])) {
+    $tien = $_POST['inputt'];
+    $type = $_POST['type-money'];
+    $donVi = array('USD' => 23000, 'EUR' => 27000, 'SGP' => 17000, 'JPY' => 120);
+    echo "Với " . $tien."" .$type ." bằng " . $tien * $donVi[$type]."VND";
 }
 ?>
 
