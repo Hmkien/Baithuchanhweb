@@ -7,11 +7,9 @@
 </head>
 <body>
     <?php
-    function HienThi($List_image){
-        foreach ($List_image as $key) {
-            echo"<img src='../image/$key' width='150px' height='150px' alt='$key'>";
-    }
-}
-?>
+    require('index.php');
+    $images=array('team-1.jpg','team-2.jpg','team-3.jpg','team-4.jpg');
+    HienThi($images);
+    ?>
 </body>
 </html>
