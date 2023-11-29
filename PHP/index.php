@@ -6,28 +6,36 @@
     <title>Document</title>
 </head>
 <body>
+    <form method="post" action="index.php">
+    <label>First Number</label><br>
+    <input type="text" name="first" required><br>
+    <label> Second Number</label><br>
+    <input type="text" name="second" required><br>
+    <input type="submit" name="+" value="+" />
+    <input type="submit" name="-" value="-" />
+    <input type="submit" name="x" value="x" />
+    <input type="submit" name="/" value="/" />
+    </form>
+    <?php 
     
-<h1>Hoán đối tiền tệ</h1>
-<form method="post" action="index.php">
-<label>Nhập vào số muốn hoán đối</label><br>
-<input type="text" name="inputt" required><br>
-<select name="type-money">
-    <option value="USD">USD</option>
-    <option value="EUR">EUR</option>
-    <option value="JPY">JPY</option>
-    <option value="SGP">SGP</option>
-</select>
-<br>
-<input type="submit" value="Chuyển đổi">
-</form>
-<?php
-if(isset($_POST['inputt']) && isset($_POST['type-money'])) {
-    $tien = $_POST['inputt'];
-    $type = $_POST['type-money'];
-    $donVi = array('USD' => 23000, 'EUR' => 27000, 'SGP' => 17000, 'JPY' => 120);
-    echo "Với " . $tien."" .$type ." bằng " . $tien * $donVi[$type]."VND";
-}
-?>
+    if(isset($_POST["+"])){
+            $ketqua=$_POST["first"]+$_POST["second"];
+            echo $ketqua;
+
+    }
+    if(isset($_POST["-"])){
+        $ketqua=$_POST["first"]-$_POST["second"];
+        echo $ketqua;
+    }
+    if(isset($_POST["x"])){
+        $ketqua=$_POST["first"]*$_POST["second"];
+        echo $ketqua;
+    }
+    if(isset($_POST["/"])){
+        $ketqua=$_POST["first"]/$_POST["second"];
+        echo $ketqua;
+    }
+    ?>
 
 </body>
 </html>
