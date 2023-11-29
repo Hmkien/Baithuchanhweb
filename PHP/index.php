@@ -6,36 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="index.php">
-    <label>First Number</label><br>
-    <input type="text" name="first" required><br>
-    <label> Second Number</label><br>
-    <input type="text" name="second" required><br>
-    <input type="submit" name="+" value="+" />
-    <input type="submit" name="-" value="-" />
-    <input type="submit" name="x" value="x" />
-    <input type="submit" name="/" value="/" />
-    </form>
-    <?php 
-    
-    if(isset($_POST["+"])){
-            $ketqua=$_POST["first"]+$_POST["second"];
-            echo $ketqua;
+    <?php
+    echo "<form method='post' action='index.php'>";
+    echo "Ngày <select name='ngay'>";
+    for($i=1; $i<=31;$i++){
+        echo "<option value='$i'>$i</option>";
 
     }
-    if(isset($_POST["-"])){
-        $ketqua=$_POST["first"]-$_POST["second"];
-        echo $ketqua;
-    }
-    if(isset($_POST["x"])){
-        $ketqua=$_POST["first"]*$_POST["second"];
-        echo $ketqua;
-    }
-    if(isset($_POST["/"])){
-        $ketqua=$_POST["first"]/$_POST["second"];
-        echo $ketqua;
-    }
+  echo"  </select>";
+  echo "Tháng<select name='thang'>";
+  for($i=1; $i<=12;$i++){
+      echo "<option value='$i'>$i</option>";
+
+  }
+echo"  </select>";
+$today=getdate();
+$nam=$today['year'];
+echo "Năm<select name='nam'>";
+for($i=1990; $i<=$nam;$i++){
+    echo "<option value='$i'>$i</option>";
+
+}
+echo"  </select>";
+echo "<br><input type='submit' value='Xác Nhận'";
+echo "</form>";
+if(isset($_POST["ngay"])&&isset($_POST["thang"])&&isset($_POST["nam"])){
+$ngay=$_POST["ngay"];
+$thang=$_POST["thang"];
+$nam=$_POST["nam"];
+    echo"<br>Bạn đã chọn ngày".$ngay."tháng".$thang."Năm".$nam."làm ngày cưới";
+}
+
     ?>
-
 </body>
 </html>
