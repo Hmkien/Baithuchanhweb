@@ -29,6 +29,20 @@
             margin:5px;
             height: 2em;
         }
+        table {
+            border-collapse: collapse;
+            border:1px solid black;
+
+        }
+        th,td{
+            border: 1px solid black;
+        }
+        tr:nth-child(odd){
+            background-color: lightblue;
+        }
+        tr:nth-child(even){
+            background-color: lightyellow;
+        }
     </style>
 </head>
 <body>
