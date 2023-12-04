@@ -1,11 +1,15 @@
-<?php
-$severname= "localhost";
-$username="root";
-$password= "";
-$db = "oderfood";
-$conn = new mysqli($severname,$username,$password,$db);
-if ($conn->connect_error) {
-    echo"Kết nối không thành công:". $conn->connect_error;
+<?php 
+$servername = "localhost";
+$username='root';
+$password ="";
+$db="oderfood";
+$conn = new mysqli($servername,$username,$password,$db);
+if($conn->connect_error){
+    echo"kết nối bị lỗi",$conn->connect_error;
 }
-
+else{
+    echo("Thành công");
+}
 ?>
+
+
