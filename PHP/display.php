@@ -27,10 +27,8 @@
 require('connect.php');
 mysqli_set_charset($conn,'utf8');
 $sql = "select * from passenger";
-$result = mysqli_query($conn, $sql);
 $ketqua = $conn->query($sql);
     if ($ketqua->num_rows > 0) {
-        if($ketqua->fetch_assoc()) {
         echo "<table> 
             <tr>
                 <th>id</th>
@@ -51,7 +49,6 @@ $ketqua = $conn->query($sql);
     } else {
         echo "không có dữ liệu";
     }
-}
     $conn->close();
     ?>
     </body>

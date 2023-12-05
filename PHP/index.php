@@ -48,38 +48,51 @@
 <body>
 <<div class="container">
     <form action="index.php" method="post">
-        <h1 style="text-align: center;">Thêm chuyến bay</h1>
-        <label>id</label><br>
-        <input class="info" type="text" name="id" required ><br>
+        <h1 style="text-align: center;">Tìm chyuến bay</h1>
         <label>origin</label><br>
         <input class="info" type="text" name="origin" required ><br>
         <label>destination</label><br>
         <input class="info" type="text" name="destination" required ><br>
-        <label>duration</label><br>
-        <input class="info" type="text" name="duration" required ><br>
-       
-        <input type="submit" name="submit" value="Thêm"><br>
+        
+        <input type="submit" name="submit" value="Tìm"><br>
         
     </form>
 </div>
 
 <?php
-if (isset($_POST['origin']) && isset($_POST['destination']) && isset($_POST['duration']) && isset($_POST['id'])){
+if (isset($_POST['origin']) && isset($_POST['destination'])){
     $origin = $_POST['origin'];
-    $duration = $_POST['duration'];
     $destination= $_POST['destination'];
-    $id = $_POST['id'];
     
     require('connect.php');
     mysqli_set_charset($conn, 'UTF-8');
-    $sql = "INSERT INTO passenger (id, origin, destination, duration) VALUES ('$id', '$origin', '$destination', '$duration')";
+    $sql = "select * from passenger where destination='$destination' and origin='$origin'";
+    $ketqua = $conn->query($sql);
+    if ($ketqua->num_rows > 0) {
+        echo "<table> 
+            <tr>
+                <th>id</th>
+                <th>origin</th>
+                <th>destination</th>
+                <th>duration</th>
+            </tr>";
 
-    if ($conn->query($sql) === true){
-        echo "Thêm thành công";
+        while ($row = $ketqua->fetch_assoc()) {
+            echo "<tr>
+                    <td>".$row["id"]."</td>
+                    <td>".$row["origin"]."</td>
+                    <td>".$row["destination"]."</td>
+                    <td>".$row["duration"]."</td>
+                  </tr>";
+        }
+        echo "</table>"; 
     } else {
-        echo "Lỗi: " . $conn->error;
+        echo "không có dữ liệu";
     }
+    $conn->close();
 }
+
+
 ?>
 
 
