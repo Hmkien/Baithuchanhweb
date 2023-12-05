@@ -48,11 +48,19 @@
 <body>
 <<div class="container">
     <form action="index.php" method="post">
-        <h1 style="text-align: center;">Tìm chyuến bay</h1>
-        <label>origin</label><br>
-        <input class="info" type="text" name="origin" required ><br>
-        <label>destination</label><br>
-        <input class="info" type="text" name="destination" required ><br>
+        <h1 style="text-align: center;">Tìm chuyến bay</h1>
+        
+      Origin <select name="origin">
+        <option value="Bắc Giang">Bắc Giang</option>
+        <option value="Hà Nội">Hà Nội </option>
+       </select><br>
+   
+       destination <select name="destination">
+            <option value="Huế">Huế</option>
+            <option value="Ba vì">Ba Vì</option>
+            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+            <option value="Thanh Hóa">Thanh Hóa</option>
+        </select><br>
         
         <input type="submit" name="submit" value="Tìm"><br>
         
