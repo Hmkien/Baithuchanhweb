@@ -46,73 +46,43 @@
     </style>
 </head>
 <body>
-<div class="container"> 
+<<div class="container">
     <form action="index.php" method="post">
-        <h1 style="text-align: center;">Thêm sản phẩm</h1>
-        <label>Nhập vào mã sản phẩm:</label><br>
+        <h1 style="text-align: center;">Thêm chuyến bay</h1>
+        <label>id</label><br>
         <input class="info" type="text" name="id" required ><br>
-        <label>Nhập vào tên sản phẩm:</label><br>
-        <input class="info" type="text" name="name" required ><br>
-        <label>Nhập vào só lượng sản phẩm:</label><br>
-        <input class="info" type="text" name="quality" required ><br>
-        <label>Nhập vào giá sản phẩm:</label><br>
-        <input class="info" type="text" name="price" required ><br>
-        <input type="submit" name="submit" value="Thêm sản phẩm"><br>
+        <label>origin</label><br>
+        <input class="info" type="text" name="origin" required ><br>
+        <label>destination</label><br>
+        <input class="info" type="text" name="destination" required ><br>
+        <label>duration</label><br>
+        <input class="info" type="text" name="duration" required ><br>
+       
+        <input type="submit" name="submit" value="Thêm"><br>
         
     </form>
-    <form action="index.php" method="post">
-        <input type="submit" name="display" value="Hiển thị dữ liệu">
-
-    </form>
 </div>
-   <?php
-   if(isset($_POST["id"]) &&isset( $_POST["name"]) &&isset($_POST["quality"]) &&isset($_POST["price"])){
-    $id = $_POST["id"];
-    $name = $_POST["name"];
-    $price = $_POST["price"];
-    $quality = $_POST["quality"];
-    require('connect.php');
-    $sql="insert into products (id, name, price, quality) values ('$id', '$name', $price, $quality)";
-    if($conn->query($sql)===true ){
-        echo "<script>alert('Thêm thành công')</script>";
-    }
-    else{
-        echo "lỗi".$conn->error;
-    }
-   $conn->close();
 
-   }
-   
-   if (isset($_POST['display'])) {
+<?php
+if (isset($_POST['origin']) && isset($_POST['destination']) && isset($_POST['duration']) && isset($_POST['id'])){
+    $origin = $_POST['origin'];
+    $duration = $_POST['duration'];
+    $destination= $_POST['destination'];
+    $id = $_POST['id'];
+    
     require('connect.php');
     mysqli_set_charset($conn, 'UTF-8');
-    $sql = 'select * from products';
-    $ketqua = $conn->query($sql);
-    if ($ketqua->num_rows > 0) {
-        echo "<table> 
-            <tr>
-                <th>mã sản phẩm</th>
-                <th>tên sản phẩm</th>
-                <th>số lượng</th>
-                <th>giá</th>
-            </tr>";
+    $sql = "INSERT INTO passenger (id, origin, destination, duration) VALUES ('$id', '$origin', '$destination', '$duration')";
 
-        while ($row = $ketqua->fetch_assoc()) {
-            echo "<tr>
-                    <td>".$row["id"]."</td>
-                    <td>".$row["name"]."</td>
-                    <td>".$row["quality"]."</td>
-                    <td>".$row["price"]."</td>
-                  </tr>";
-        }
-        echo "</table>"; 
+    if ($conn->query($sql) === true){
+        echo "Thêm thành công";
     } else {
-        echo "không có dữ liệu";
+        echo "Lỗi: " . $conn->error;
     }
-    $conn->close();
 }
+?>
 
-   ?>
+
 </body>
 
 </html>
