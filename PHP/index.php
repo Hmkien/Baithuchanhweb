@@ -48,54 +48,33 @@
 <body>
 <<div class="container">
     <form action="index.php" method="post">
-        <h1 style="text-align: center;">Tìm chuyến bay</h1>
-        
-      Origin <select name="origin">
-        <option value="Bắc Giang">Bắc Giang</option>
-        <option value="Hà Nội">Hà Nội </option>
-       </select><br>
-   
-       destination <select name="destination">
-            <option value="Huế">Huế</option>
-            <option value="Ba vì">Ba Vì</option>
-            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-            <option value="Thanh Hóa">Thanh Hóa</option>
-        </select><br>
-        
-        <input type="submit" name="submit" value="Tìm"><br>
+        <h1 style="text-align: center;"> </h1>
+        <label>Họ và tên</label><br>
+        <input type="text" name="name"required><br>
+        <label>origin</label><br>
+        <input type="text" name="origin" required><br>
+        <label>destination</label><br>
+        <input type="text" name="destination" required><br>
+        <label> duration</label><br>
+        <input type="text" name="duration" required><br>
+        <input type="submit" name="submit" value="Đăng kí"><br>
         
     </form>
 </div>
 
 <?php
-if (isset($_POST['origin']) && isset($_POST['destination'])){
+if (isset($_POST['origin']) && isset($_POST['destination'])&& isset($_POST['name'])&& isset($_POST['duration'])){
     $origin = $_POST['origin'];
     $destination= $_POST['destination'];
-    
+    $name = $_POST['name'];
+    $duration = $_POST['duration'];
     require('connect.php');
     mysqli_set_charset($conn, 'UTF-8');
-    $sql = "select * from passenger where destination='$destination' and origin='$origin'";
-    $ketqua = $conn->query($sql);
-    if ($ketqua->num_rows > 0) {
-        echo "<table> 
-            <tr>
-                <th>id</th>
-                <th>origin</th>
-                <th>destination</th>
-                <th>duration</th>
-            </tr>";
-
-        while ($row = $ketqua->fetch_assoc()) {
-            echo "<tr>
-                    <td>".$row["id"]."</td>
-                    <td>".$row["origin"]."</td>
-                    <td>".$row["destination"]."</td>
-                    <td>".$row["duration"]."</td>
-                  </tr>";
-        }
-        echo "</table>"; 
+    $sql = "INSERT  into passenger (origin, destination, duration,name ) values('$origin','$destination','$duration','$name')";
+    if($conn->query($sql)===true){
+        echo "đăng kí thành công";
     } else {
-        echo "không có dữ liệu";
+        echo "lỗi".$conn->error;
     }
     $conn->close();
 }
