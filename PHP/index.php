@@ -46,41 +46,18 @@
     </style>
 </head>
 <body>
-    <form method="post" action="index.php">
-        <label> Name</label><br>
-        <input type="text" name="Name" required><br>
-        <input type="submit" value="Tìm kiếm"><br>
-    </form>
     <?php
     require('connect.php');
-    if(isset($_POST['Name'])) {
-        $name = $_POST['Name'];
-        $sql= "SELECT * FROM passenger WHERE Name='$name'";
-        $result = $conn->query($sql);
-        if($result->num_rows > 0) {
-            echo "<table> 
-            <tr>
-                <th>id</th>
-                <th>origin</th>
-                <th>destination</th>
-                <th>duration</th>
-                <th>Name</th>
-            </tr>";
-            while($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>
-                <td>".$row["id"]."</td>
-                <td>".$row["origin"]."</td>
-                <td>".$row["destination"]."</td>
-                <td>".$row["duration"]."</td>
-                <td>". $row["Name"]."</td>
-              </tr>";
+    mysqli_set_charset ($conn, 'UTF-8');
+    $sql="DELETE FROM passenger WHERE id='14'";
+    if($conn->query($sql)==True){
+        echo"Xóa thành công";
     }
-    echo "</table>"; 
-} else {
-    echo "không có dữ liệu";
-}
-$conn->close();
+    else{
+        echo "lõi".$conn->error;
     }
-?>
+    $conn->close();
+
+    ?>
 </body>
 </html>
