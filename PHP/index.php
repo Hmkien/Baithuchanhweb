@@ -46,52 +46,41 @@
     </style>
 </head>
 <body>
-<<div class="container">
-    <form action="index.php" method="post">
-        <h1 style="text-align: center;"> </h1>
-        <label>origin</label><br>
-        <input type="text" name="origin" required><br>
-        <label>destination</label><br>
-        <input type="text" name="destination" required><br>
-        <input type="submit" name="submit" value="Tìm kiếm"><br>
-        
+    <form method="post" action="index.php">
+        <label> Name</label><br>
+        <input type="text" name="Name" required><br>
+        <input type="submit" value="Tìm kiếm"><br>
     </form>
-</div>
-
-<?php
-if (isset($_POST['origin']) && isset($_POST['destination'])){
-    $origin = $_POST['origin'];
-    $destination= $_POST['destination'];
+    <?php
     require('connect.php');
-    mysqli_set_charset($conn, 'UTF-8');
-    $sql = "select * from passenger where origin='$origin' and destination='$destination'";
-    $ketqua =$conn->query($sql);
-    if($ketqua->num_rows>0){
-        echo "<table> 
+    if(isset($_POST['Name'])) {
+        $name = $_POST['Name'];
+        $sql= "SELECT * FROM passenger WHERE Name='$name'";
+        $result = $conn->query($sql);
+        if($result->num_rows > 0) {
+            echo "<table> 
             <tr>
                 <th>id</th>
                 <th>origin</th>
                 <th>destination</th>
                 <th>duration</th>
-                <th>name</th>
+                <th>Name</th>
             </tr>";
-        if($row=$ketqua->fetch_assoc()){
-            echo "<tr>
-            <td>".$row["id"]."</td>
-            <td>".$row["origin"]."</td>
-            <td>".$row["destination"]."</td>
-            <td>".$row["duration"]."</td>
-            <td>".$row["Name"]."</td>
-          </tr>";
-}
-echo "</table>"; 
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                <td>".$row["id"]."</td>
+                <td>".$row["origin"]."</td>
+                <td>".$row["destination"]."</td>
+                <td>".$row["duration"]."</td>
+                <td>". $row["Name"]."</td>
+              </tr>";
+    }
+    echo "</table>"; 
 } else {
-echo "không có dữ liệu";
+    echo "không có dữ liệu";
 }
 $conn->close();
-}
+    }
 ?>
-
 </body>
-
 </html>
