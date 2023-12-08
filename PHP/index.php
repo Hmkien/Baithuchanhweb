@@ -80,10 +80,7 @@ if(isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["quantity"]) && 
         $sql .= " price='$newprice',";
     }
     
-    // Loại bỏ dấu phẩy cuối cùng nếu có
     $sql = rtrim($sql, ',');
-    
-    // Thêm điều kiện WHERE cho ID
     $sql .= " WHERE id='$id'";
     
     // Thực hiện câu lệnh UPDATE
